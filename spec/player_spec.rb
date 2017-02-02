@@ -26,6 +26,10 @@ describe Player do
 
     it "decreases its chips"
 
+    it "ensures they can't bet more than they have"
+
+    it "tells game when player is all in"
+
     it "calls #end_turn"
 
   end
@@ -51,6 +55,12 @@ describe Player do
   describe "#end_turn" do
 
     it "tells the game to end its turn"
+
+  end
+
+  describe "#bankrupt?" do
+
+    it "tells the game to remove self from game when player is out of chips"
 
   end
 
