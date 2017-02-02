@@ -42,4 +42,9 @@ class Deck
     @deck.map { |card| card }
   end
 
+  def pop(amount = 1)
+    cards = @deck.pop(amount)
+    cards.is_a?(Array) ? cards : [cards]
+  end
+
 end

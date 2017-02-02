@@ -27,9 +27,17 @@ describe Deck do
 
   describe "#pop" do
 
-    it "takes an integer argument"
+    it "takes an integer argument" do
+      expect{ unshuffled_deck.pop("NO") }.to raise_error(TypeError)
+    end
 
-    it "removes the top card(s) from the deck and returns it"
+    it "removes the top card(s) from the deck and returns it" do
+      last_card = [unshuffled_deck.deck.last]
+      expect(unshuffled_deck.pop).to eq(last_card)
+
+      last_cards = unshuffled_deck.deck[-4..-1]
+      expect(unshuffled_deck.pop(4)).to eq(last_cards)
+    end
 
   end
 
