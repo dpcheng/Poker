@@ -34,4 +34,12 @@ class Deck
     end
   end
 
+  def shuffle!
+    @deck.shuffle!
+  end
+
+  def deep_dup
+    @deck.map { |card| card }
+  end
+
 end

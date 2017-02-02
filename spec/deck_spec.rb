@@ -16,8 +16,10 @@ describe Deck do
 
   describe "#shuffle!" do
 
+    let(:dup_deck) { unshuffled_deck.deep_dup }
+
     it "shuffles array of cards" do
-      expect(unshuffled_deck.deck).to not_eq(unshuffled_deck.shuffle!.deck)
+      expect(dup_deck).to_not eq(unshuffled_deck.shuffle!)
     end
 
   end
