@@ -1,6 +1,6 @@
 class Card
 
-  VALUES = {
+  RANKS = {
     :two => 2,
     :three => 3,
     :four => 4,
@@ -16,16 +16,16 @@ class Card
     :ace => 14
   }
 
-  attr_reader :name, :suit, :value
+  attr_reader :value, :suit, :rank
 
-  def initialize(name, suit)
-    @name = name
+  def initialize(value, suit)
+    @value = value
     @suit = suit
-    @value = read_value
+    @rank = read_value
   end
 
   def read_value
-    VALUES[@name]
+    RANKS[@value]
   end
 
 end
